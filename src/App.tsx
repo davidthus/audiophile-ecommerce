@@ -1,57 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import Footer from "./layout/Footer/Footer";
+import Navbar from "./layout/Navbar/Navbar";
+import { themeType } from "./types/themeTypes";
+const Home = React.lazy(() => import("./pages/Home/Home"));
+const Headphones = React.lazy(() => import("./pages/Headphones/Headphones"));
+const Speakers = React.lazy(() => import("./pages/Speakers/Speakers"));
+const Earphones = React.lazy(() => import("./pages/Earphones/Earphones"));
+
+const Fallback = styled.div`
+  position: fixed;
+  inset: 0;
+  background-color: ${({ theme }: themeType) => theme.lightGrey};
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Suspense fallback={<Fallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/headphones" element={<Headphones />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/earphones" element={<Earphones />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </>
   );
 }
 
