@@ -23,11 +23,11 @@ export const LinkHeading = styled.h6`
   ${HeadingSix}
   color: #000;
   text-align: center;
-  align-self: end;
+  align-self: start;
 `;
 
 export const LinkImg = styled.img`
-  height: 160px;
+  height: 180px;
   width: auto;
   align-self: end;
   justify-self: center;

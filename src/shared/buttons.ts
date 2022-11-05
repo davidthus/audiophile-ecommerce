@@ -18,9 +18,8 @@ export const Button2 = styled.button`
   ${Overline}
   padding: 1rem 2rem;
   border: 2px solid #000;
-  background-color: #fff;
+  background-color: transparent;
   color: #000;
-  border: none;
   cursor: pointer;
   transition: 0.4s;
 
