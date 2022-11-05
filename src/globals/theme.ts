@@ -1,15 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-export const theme = {
-  black: "#000",
-  white: "#FFF",
-  grey: "#F1F1F1",
-  lightGrey: "#FAFAFA",
-  secondaryBlack: "#101010",
-  lightOrange: "#FBAF85",
-  orange: "#D87D4A",
-};
-
 export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;

@@ -31,7 +31,6 @@ const appPaths = [
 
 function Navbar() {
   const location = useLocation();
-  console.log(location);
 
   return (
     <Container>

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Overline, Subtitle } from "../../shared/typography";
-import { themeObject, themeType } from "../../types/themeTypes";
 
 export const Container = styled.footer`
   width: 100%;
-  background-color: ${({ theme }: themeType) => theme.secondaryBlack};
+  background-color: #101010;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,11 +19,11 @@ export const Wrapper = styled.div`
 
 export const NavLink = styled.p`
   ${Overline}
-  color: ${({ theme }: themeType) => theme.white};
+  color: #FFF;
 
   &:hover {
     transition: 0.4s;
-    color: ${({ theme }: themeType) => theme.orange};
+    color: #d87d4a;
   }
 `;
 
@@ -37,7 +36,10 @@ export const NavLinksWrapper = styled.nav`
 
 export const About = styled.p`
   ${Subtitle}
-  color: ${({ theme }: themeType) => theme.white};
+  color: #FFFFFF;
+
+  mix-blend-mode: normal;
+  opacity: 0.5;
   width: 100%;
   max-width: 540px;
 `;
@@ -53,7 +55,7 @@ export const FooterBarWrapper = styled.div`
 export const FooterBar = styled.div`
   width: 101px;
   height: 4px;
-  background-color: ${({ theme }: themeType) => theme.orange};
+  background-color: #d87d4a;
 `;
 
 export const Navbar = styled.nav`
@@ -84,7 +86,9 @@ export const CopyrightWrapper = styled.div`
 
 export const CopyrightText = styled.p`
   ${Subtitle}
-  color: ${({ theme }: themeType) => theme.white};
+  color: #FFF;
+  opacity: 0.5;
+  mix-blend-mode: normal;
   font-weight: 700;
 `;
 
@@ -92,6 +96,6 @@ export const SocialsSvg = styled.svg`
   cursor: pointer;
 
   &:hover path {
-    fill: ${({ theme }: themeType) => theme.orange};
+    fill: #d87d4a;
   }
 `;

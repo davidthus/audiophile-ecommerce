@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./layout/Footer/Footer";
 import Navbar from "./layout/Navbar/Navbar";
-import { themeType } from "./types/themeTypes";
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Headphones = React.lazy(() => import("./pages/Headphones/Headphones"));
 const Speakers = React.lazy(() => import("./pages/Speakers/Speakers"));
@@ -12,7 +11,7 @@ const Earphones = React.lazy(() => import("./pages/Earphones/Earphones"));
 const Fallback = styled.div`
   position: fixed;
   inset: 0;
-  background-color: ${({ theme }: themeType) => theme.lightGrey};
+  background-color: #fafafa;
 `;
 
 function App() {

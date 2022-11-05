@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Overline } from "../../shared/typography";
-import { themeObject, themeType } from "../../types/themeTypes";
 
 export const Container = styled.header`
   width: 100%;
-  background-color: ${({ theme }: themeType) => theme.secondaryBlack};
+  background-color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,20 +16,18 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid ${({ theme }: themeType) => theme.grey};
-  border-width: ${(props: { theme: themeObject; page: boolean }) =>
-    props.page ? "1px" : 0};
+  border-bottom: solid rgba(255 255 255 / 0.2);
+  border-width: ${(props: { page: boolean }) => (props.page ? "1px" : 0)};
   padding: 2rem 0;
 `;
 
 export const NavLink = styled.p`
   ${Overline}
-  color: ${(props: { theme: themeObject; active: boolean }) =>
-    props.active ? props.theme.orange : props.theme.white};
+  color: ${(props: { active: boolean }) => (props.active ? "#D87D4A" : "#FFF")};
   transition: 0.4s;
 
   &:hover {
-    color: ${({ theme }: themeType) => theme.orange};
+    color: #d87d4a;
   }
 `;
 
