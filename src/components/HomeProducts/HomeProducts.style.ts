@@ -16,6 +16,7 @@ export const Container = styled.section`
   margin-top: 168px;
   column-gap: 30px;
   row-gap: 48px;
+  margin-bottom: 200px;
 `;
 
 export const TopSection = styled.div`

@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryLinks, Hero, HomeProducts } from "../../components";
+import { BestGear, CategoryLinks, Hero, HomeProducts } from "../../components";
 import { ContentWrapper, PageContainer } from "./Home.style";
 
 function Home() {
@@ -9,6 +9,7 @@ function Home() {
       <ContentWrapper>
         <CategoryLinks />
         <HomeProducts />
+        <BestGear />
       </ContentWrapper>
     </PageContainer>
   );
