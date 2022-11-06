@@ -6,8 +6,10 @@ export const ArticleContainer = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: ${({ reverse }: { reverse: boolean }) =>
-    reverse ? "row-reverse" : "row"};
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 `;
 
 export const Article = styled.article`

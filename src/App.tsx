@@ -3,10 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./layout/Footer/Footer";
 import Navbar from "./layout/Navbar/Navbar";
+const CategoryPage = React.lazy(() => import("./pages/CategoryPage"));
 const Home = React.lazy(() => import("./pages/Home"));
-const Headphones = React.lazy(() => import("./pages/Headphones"));
-const Speakers = React.lazy(() => import("./pages/Speakers"));
-const Earphones = React.lazy(() => import("./pages/Earphones"));
 
 const Fallback = styled.div`
   position: fixed;
@@ -21,9 +19,7 @@ function App() {
       <Suspense fallback={<Fallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/headphones" element={<Headphones />} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/earphones" element={<Earphones />} />
+          <Route path="/category/:productCategory" element={<CategoryPage />} />
         </Routes>
       </Suspense>
       <Footer />
