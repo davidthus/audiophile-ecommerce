@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Footer from "./layout/Footer/Footer";
 import Navbar from "./layout/Navbar/Navbar";
-const Home = React.lazy(() => import("./pages/Home/Home"));
-const Headphones = React.lazy(() => import("./pages/Headphones/Headphones"));
-const Speakers = React.lazy(() => import("./pages/Speakers/Speakers"));
-const Earphones = React.lazy(() => import("./pages/Earphones/Earphones"));
+const Home = React.lazy(() => import("./pages/Home"));
+const Headphones = React.lazy(() => import("./pages/Headphones"));
+const Speakers = React.lazy(() => import("./pages/Speakers"));
+const Earphones = React.lazy(() => import("./pages/Earphones"));
 
 const Fallback = styled.div`
   position: fixed;
