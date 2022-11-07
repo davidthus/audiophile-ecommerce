@@ -29,3 +29,14 @@ export const ContentWrapper = styled.section`
   padding-top: 160px;
   padding-bottom: 160px;
 `;
+
+export const ProductContentWrapper = styled.section`
+  display: flex;
+  max-width: 1110px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 160px;
+  padding-top: 79px;
+  padding-bottom: 160px;
+`;

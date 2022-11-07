@@ -2,19 +2,20 @@ export interface Product {
   id: number;
   slug: string;
   name: string;
-  shortName: string;
-  image?: CategoryImage;
-  cartImage: string;
-  cartQuantity?: number;
+  image: CategoryImage;
   category: string;
   categoryImage: CategoryImage;
   new: boolean;
   price: number;
-  description?: string;
-  features?: string;
-  includes?: IncludedItem[];
-  gallery?: Gallery;
-  others?: Other[];
+  description: string;
+  features: string;
+  includes: IncludedItem[];
+  gallery: {
+    first: CategoryImage;
+    second: CategoryImage;
+    third: CategoryImage;
+  };
+  others: Other[];
 }
 
 export interface CategoryImage {

@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import {
   BestGear,
   CategoryLinks,
+  ProductArticle,
   ProductDesc,
   ProductGallery,
   Reccomendations,
 } from "../components";
 import Data from "../data/data.json";
-import { ContentWrapper, PageContainer } from "../shared/page";
+import { PageContainer, ProductContentWrapper } from "../shared/page";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -16,18 +17,21 @@ function ProductPage() {
 
   return (
     <PageContainer>
-      <ContentWrapper>
+      <ProductContentWrapper>
         {Product && (
-          <ProductDesc
-            features={Product.features}
-            includes={Product.includes}
-          />
+          <>
+            <ProductArticle product={Product} />
+            <ProductDesc
+              features={Product.features}
+              includes={Product.includes}
+            />
+            <ProductGallery gallery={Product?.gallery} />
+            <Reccomendations others={Product.others} />
+          </>
         )}
-        {Product && <ProductGallery gallery={Product?.gallery} />}
-        {Product && <Reccomendations others={Product.others} />}
         <CategoryLinks />
         <BestGear />
-      </ContentWrapper>
+      </ProductContentWrapper>
     </PageContainer>
   );
 }

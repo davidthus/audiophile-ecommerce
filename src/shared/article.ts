@@ -31,7 +31,8 @@ export const Description = styled.p`
   color: #000000;
   mix-blend-mode: normal;
   opacity: 0.5;
-  margin-bottom: 40px;
+  margin-bottom: ${({ product }: { product: boolean }) =>
+    product ? "32px" : "40px"};
 `;
 
 export const ArticleImage = styled.img`
