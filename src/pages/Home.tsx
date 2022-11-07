@@ -1,6 +1,6 @@
 import React from "react";
 import { BestGear, CategoryLinks, Hero, HomeProducts } from "../components";
-import { HomeContentWrapper, PageContainer } from "../shared/categoryPage";
+import { HomeContentWrapper, PageContainer } from "../shared/page";
 
 function Home() {
   return (

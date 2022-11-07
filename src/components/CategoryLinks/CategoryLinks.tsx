@@ -16,17 +16,17 @@ function CategoryLinks() {
   const links = [
     {
       heading: "headphones",
-      path: "/headphones",
+      path: "/category/headphones",
       imgSrc: headphonesThumbnail,
     },
     {
       heading: "speakers",
-      path: "/speakers",
+      path: "/category/speakers",
       imgSrc: speakersThumbnail,
     },
     {
       heading: "earphones",
-      path: "/earphones",
+      path: "/category/earphones",
       imgSrc: earphonesThumbnail,
     },
   ];

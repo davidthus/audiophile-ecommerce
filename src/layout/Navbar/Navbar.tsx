@@ -13,7 +13,7 @@ import {
 const appPaths = [
   {
     name: "home",
-    path: "/category/",
+    path: "/",
   },
   {
     name: "headphones",

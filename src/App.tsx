@@ -5,6 +5,7 @@ import Footer from "./layout/Footer/Footer";
 import Navbar from "./layout/Navbar/Navbar";
 const CategoryPage = React.lazy(() => import("./pages/CategoryPage"));
 const Home = React.lazy(() => import("./pages/Home"));
+const ProductPage = React.lazy(() => import("./pages/ProductPage"));
 
 const Fallback = styled.div`
   position: fixed;
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category/:productCategory" element={<CategoryPage />} />
+          <Route path="/product/:slug" element={<ProductPage />} />
         </Routes>
       </Suspense>
       <Footer />

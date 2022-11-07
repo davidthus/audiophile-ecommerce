@@ -19,7 +19,7 @@ export const HomeContentWrapper = styled.section`
   padding-bottom: 200px;
 `;
 
-export const CategoryContentWrapper = styled.section`
+export const ContentWrapper = styled.section`
   display: flex;
   max-width: 1110px;
   width: 100%;

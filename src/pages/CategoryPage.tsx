@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BestGear, CategoryLinks } from "../components";
 import Data from "../data/data.json";
 import {
@@ -12,7 +12,7 @@ import {
 } from "../shared/article";
 import { Button1 } from "../shared/buttons";
 import { BannerHeading, CategoryBanner } from "../shared/categoryBanner";
-import { CategoryContentWrapper, PageContainer } from "../shared/categoryPage";
+import { ContentWrapper, PageContainer } from "../shared/page";
 
 function CategoryPage() {
   const { productCategory } = useParams();
@@ -25,16 +25,16 @@ function CategoryPage() {
       <CategoryBanner>
         <BannerHeading>{productCategory}</BannerHeading>
       </CategoryBanner>
-      <CategoryContentWrapper>
+      <ContentWrapper>
         {products.map((product, i) => (
           <ArticleContainer key={i}>
             <Article>
               {product.new && <Subheading>New Product</Subheading>}
               <ArticleHeading>{product.name}</ArticleHeading>
               <Description>{product.description}</Description>
-              <div>
+              <Link to={`/product/${product.slug}`}>
                 <Button1>See Product</Button1>
-              </div>
+              </Link>
             </Article>
             <ArticleImage
               src={require(`../assets/${product.categoryImage.desktop}`)}
@@ -45,7 +45,7 @@ function CategoryPage() {
         ))}
         <CategoryLinks />
         <BestGear />
-      </CategoryContentWrapper>
+      </ContentWrapper>
     </PageContainer>
   );
 }
