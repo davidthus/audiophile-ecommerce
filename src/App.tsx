@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import { useAppSelector } from "./app/hooks";
 import Footer from "./layout/Footer/Footer";
 import Navbar from "./layout/Navbar/Navbar";
 const CategoryPage = React.lazy(() => import("./pages/CategoryPage"));
@@ -14,6 +15,12 @@ const Fallback = styled.div`
 `;
 
 function App() {
+  const state = useAppSelector((state) => state);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state]);
+
   return (
     <>
       <Navbar />

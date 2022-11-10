@@ -17,4 +17,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .stop-scrolling {
+height: 100%;
+overflow: hidden;
+}
 `;

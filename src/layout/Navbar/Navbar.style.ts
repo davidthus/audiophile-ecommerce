@@ -40,7 +40,20 @@ export const NavLinksWrapper = styled.nav`
 
 export const CartWrapper = styled.div`
   cursor: pointer;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+`;
+
+export const PageOverlay = styled.div`
+  background: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+  position: fixed;
+  z-index: 50;
+  right: 0;
+  height: 100vh;
+  left: 0;
+  top: 85px;
 `;

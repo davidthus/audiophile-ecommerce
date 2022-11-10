@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import { store } from "./app/store";
 import { GlobalStyle } from "./globals/theme";
+import ScrollToTop from "./utils/scrolling";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -12,10 +13,11 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <Router>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Router>
+        <ScrollToTop />
         <App />
-      </Provider>
-    </Router>
+      </Router>
+    </Provider>
   </React.StrictMode>
 );

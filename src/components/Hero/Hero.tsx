@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button1 } from "../../shared/buttons";
 import {
   ArticleWrapper,
@@ -20,9 +21,9 @@ function Hero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </Description>
-          <div>
+          <Link to="/product/xx99-mark-two-headphones">
             <Button1>SEE PRODUCT</Button1>
-          </div>
+          </Link>
         </ArticleWrapper>
       </Wrapper>
     </Container>

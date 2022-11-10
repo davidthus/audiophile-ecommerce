@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import earphonesSrc from "../../assets/home/desktop/image-earphones-yx1.jpg";
 import { Button2 } from "../../shared/buttons";
 
@@ -25,21 +26,23 @@ function HomeProducts() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </Description>
-          <CTA>See Product</CTA>
+          <Link to="/product/zx9-speaker">
+            <CTA>See Product</CTA>
+          </Link>
         </TopSectionArticle>
       </TopSection>
       <MiddleSectionArticle>
         <SecondaryHeading>ZX7 SPEAKER</SecondaryHeading>
-        <div>
+        <Link to="/product/zx7-speaker">
           <Button2>See Product</Button2>
-        </div>
+        </Link>
       </MiddleSectionArticle>
       <BottomLeft src={earphonesSrc} alt="yx1 earphones" />
       <BottomRight>
         <SecondaryHeading>YX1 EARPHONES</SecondaryHeading>
-        <div>
+        <Link to="/product/yx1-earphones">
           <Button2>See Product</Button2>
-        </div>
+        </Link>
       </BottomRight>
     </Container>
   );

@@ -1,12 +1,17 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ReactComponent as Cart } from "../../assets/shared/desktop/icon-cart.svg";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
+import { Cart } from "../../components";
+import { closeModal, openModal } from "../../features/ModalSlice";
+import { disableScrolling, enableScrolling } from "../../utils/scrolling";
 import {
   CartWrapper,
   Container,
   NavLink,
   NavLinksWrapper,
+  PageOverlay,
   Wrapper,
 } from "./Navbar.style";
 
@@ -31,9 +36,23 @@ const appPaths = [
 
 function Navbar() {
   const location = useLocation();
+  const dispatch = useAppDispatch();
+  const { modal } = useAppSelector((state) => state);
 
   return (
     <Container>
+      {((modal.modalOpen && modal.modalType === "navbar") ||
+        (modal.modalOpen &&
+          modal.modalType === "cart" &&
+          location.pathname !== "/")) && (
+        <PageOverlay
+          onClick={() => {
+            dispatch(closeModal());
+            enableScrolling();
+          }}
+        />
+      )}
+      {modal.modalOpen && modal.modalType === "checkout" && <PageOverlay />}
       <Wrapper
         page={
           appPaths.some((path) => path.path === location.pathname)
@@ -64,7 +83,22 @@ function Navbar() {
             ))}
         </NavLinksWrapper>
         <CartWrapper>
-          <Cart />
+          <CartWrapper
+            onClick={() => {
+              if (modal.modalOpen && modal.modalType === "checkout") {
+                return;
+              } else if (modal.modalOpen && modal.modalType === "cart") {
+                dispatch(closeModal());
+                enableScrolling();
+              } else {
+                dispatch(openModal({ type: "cart" }));
+                disableScrolling();
+              }
+            }}
+          >
+            <CartIcon />
+          </CartWrapper>
+          {modal.modalOpen && modal.modalType === "cart" && <Cart />}
         </CartWrapper>
       </Wrapper>
     </Container>
