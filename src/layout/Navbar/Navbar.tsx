@@ -12,6 +12,7 @@ import {
   NavLink,
   NavLinksWrapper,
   PageOverlay,
+  TotalSpan,
   Wrapper,
 } from "./Navbar.style";
 
@@ -37,7 +38,7 @@ const appPaths = [
 function Navbar() {
   const location = useLocation();
   const dispatch = useAppDispatch();
-  const { modal } = useAppSelector((state) => state);
+  const { modal, cart } = useAppSelector((state) => state);
 
   return (
     <Container>
@@ -97,6 +98,9 @@ function Navbar() {
             }}
           >
             <CartIcon />
+            {cart.totalQuantity > 0 && (
+              <TotalSpan>{cart.totalQuantity}</TotalSpan>
+            )}
           </CartWrapper>
           {modal.modalOpen && modal.modalType === "cart" && <Cart />}
         </CartWrapper>

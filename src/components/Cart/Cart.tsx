@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   decreaseQuantity,
   increaseQuantity,
   removeAll,
 } from "../../features/CartSlice";
+import { closeModal } from "../../features/ModalSlice";
+import { enableScrolling } from "../../utils/scrolling";
 import {
   Button,
   ChangeQuantityWrapper,
@@ -86,7 +89,16 @@ function Cart() {
                 .toLocaleString()}
             </TotalPrice>
           </TotalWrapper>
-          <Button>Checkout</Button>
+          <Link to="/checkout" style={{ width: "100%" }}>
+            <Button
+              onClick={() => {
+                dispatch(closeModal());
+                enableScrolling();
+              }}
+            >
+              Checkout
+            </Button>
+          </Link>
         </>
       ) : (
         <TotalText>Your cart is empty.</TotalText>

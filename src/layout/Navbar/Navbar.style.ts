@@ -46,6 +46,24 @@ export const CartWrapper = styled.div`
   align-items: center;
 `;
 
+export const TotalSpan = styled.span`
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 0.6rem;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background: #d87d4a;
+  font-size: 0.8125rem;
+  border-radius: 50%;
+  color: #fff;
+  top: -0.375rem;
+  right: -0.75rem;
+`;
+
 export const PageOverlay = styled.div`
   background: #000000;
   mix-blend-mode: normal;

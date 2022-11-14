@@ -7,6 +7,7 @@ import Navbar from "./layout/Navbar/Navbar";
 const CategoryPage = React.lazy(() => import("./pages/CategoryPage"));
 const Home = React.lazy(() => import("./pages/Home"));
 const ProductPage = React.lazy(() => import("./pages/ProductPage"));
+const Checkout = React.lazy(() => import("./pages/Checkout"));
 
 const Fallback = styled.div`
   position: fixed;
@@ -27,6 +28,7 @@ function App() {
       <Suspense fallback={<Fallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/category/:productCategory" element={<CategoryPage />} />
           <Route path="/product/:slug" element={<ProductPage />} />
         </Routes>
