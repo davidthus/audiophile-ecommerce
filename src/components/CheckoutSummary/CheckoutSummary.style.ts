@@ -10,6 +10,7 @@ export const Container = styled.section`
   gap: 32px;
   max-width: 350px;
   width: 100%;
+  height: min-content;
 `;
 
 export const ItemListWrapper = styled.ul`

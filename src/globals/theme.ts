@@ -22,4 +22,12 @@ export const GlobalStyle = createGlobalStyle`
 height: 100%;
 overflow: hidden;
 }
+
+.error-text {
+  color: #CD2C2C;
+}
+
+.error-input {
+  border: 2px solid #CD2C2C
+}
 `;

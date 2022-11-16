@@ -66,7 +66,7 @@ function CheckoutSummary() {
           <GrandTotal>$ {(total * 1.2 + 50).toLocaleString()}</GrandTotal>
         </PriceRow>
       </PricesSection>
-      <Button1>CONTINUE</Button1>
+      <Button1 type="submit">CONTINUE</Button1>
     </Container>
   );
 }
