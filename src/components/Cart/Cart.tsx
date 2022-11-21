@@ -84,9 +84,12 @@ function Cart() {
             <TotalText>Total</TotalText>
             <TotalPrice>
               ${" "}
-              {itemPrices
-                .reduce((prev, currentValue) => prev + currentValue, 0)
-                .toLocaleString()}
+              {(
+                itemPrices.reduce(
+                  (prev, currentValue) => prev + currentValue,
+                  0
+                ) * 1.2
+              ).toLocaleString()}
             </TotalPrice>
           </TotalWrapper>
           <Link to="/checkout" style={{ width: "100%" }}>

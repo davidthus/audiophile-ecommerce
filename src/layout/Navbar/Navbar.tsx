@@ -53,7 +53,6 @@ function Navbar() {
           }}
         />
       )}
-      {modal.modalOpen && modal.modalType === "checkout" && <PageOverlay />}
       <Wrapper
         page={
           appPaths.some((path) => path.path === location.pathname)
