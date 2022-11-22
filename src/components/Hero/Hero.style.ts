@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import heroImgSrc from "../../assets/home/desktop/image-hero.jpg";
-
+import heroDesktopImgSrc from "../../assets/home/desktop/image-hero.jpg";
+import heroMobileImgSrc from "../../assets/home/mobile/image-header.jpg";
+import heroTabletImgSrc from "../../assets/home/tablet/image-header.jpg";
 import { Body, HeadingOne, Subtitle } from "../../shared/typography";
 
 export const Container = styled.section`
@@ -16,9 +17,15 @@ export const Container = styled.section`
     position: absolute;
     top: -86px;
     right: 0;
-    background: url(${heroImgSrc}) center top 3rem / contain no-repeat;
+    background: url(${heroDesktopImgSrc}) center top 3rem / contain no-repeat;
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 1240px) {
+    &::after {
+      background: url(${heroTabletImgSrc}) center top 3rem / contain no-repeat;
+    }
   }
 `;
 
@@ -27,8 +34,11 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1240px) {
+    justify-content: center;
+  }
 `;
 
 export const ArticleWrapper = styled.article`
@@ -39,23 +49,39 @@ export const ArticleWrapper = styled.article`
   justify-content: center;
   gap: 38px;
   z-index: 99;
+
+  @media (max-width: 1240px) {
+    max-width: 396px;
+    align-items: center;
+  }
 `;
 
 export const MainTitle = styled.h1`
   ${HeadingOne}
   color: #FFFFFF;
+  @media (max-width: 1240px) {
+    text-align: center;
+  }
 `;
 
 export const SecondTitle = styled.h2`
   ${Body}
   color: #FFFFFF;
   mix-blend-mode: normal;
+  @media (max-width: 1240px) {
+    text-align: center;
+  }
   opacity: 0.5;
 `;
 
 export const Description = styled.p`
+  text-align: center;
   ${Subtitle}
   color: #FFFFFF;
   mix-blend-mode: normal;
+  @media (max-width: 1240px) {
+    max-width: 349px;
+    text-align: center;
+  }
   opacity: 0.75;
 `;

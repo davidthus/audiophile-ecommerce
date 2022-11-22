@@ -7,11 +7,10 @@ export const Container = styled.section`
   background-color: #fff;
   border-radius: 8px;
   padding: 48px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   z-index: 99;
   max-height: calc(100vh - (148px + 1.5rem));
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export const PageOverlay = styled.div`

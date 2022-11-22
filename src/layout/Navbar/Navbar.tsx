@@ -3,12 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
+import { ReactComponent as HamburgerIcon } from "../../assets/shared/tablet/icon-hamburger.svg";
 import { Cart } from "../../components";
 import { closeModal, openModal } from "../../features/ModalSlice";
 import { disableScrolling, enableScrolling } from "../../utils/scrolling";
 import {
   CartWrapper,
   Container,
+  HamburgerWrapper,
+  LogoWrapper,
   NavLink,
   NavLinksWrapper,
   PageOverlay,
@@ -60,9 +63,14 @@ function Navbar() {
             : false
         }
       >
-        <Link to="/">
-          <Logo />
-        </Link>
+        <HamburgerWrapper>
+          <HamburgerIcon />
+        </HamburgerWrapper>
+        <LogoWrapper>
+          <Link to="/">
+            <Logo />
+          </Link>
+        </LogoWrapper>
         <NavLinksWrapper>
           {appPaths
             .filter((path) => {

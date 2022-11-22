@@ -8,6 +8,10 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   padding-inline: 2rem;
+
+  @media (max-width: 1240px) {
+    padding-inline: 40px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -19,6 +23,21 @@ export const Wrapper = styled.div`
   border-bottom: solid rgba(255 255 255 / 0.2);
   border-width: ${(props: { page: boolean }) => (props.page ? "1px" : 0)};
   padding: 2rem 0;
+
+  @media (max-width: 1240px) {
+    gap: 42px;
+    justify-content: flex-start;
+  }
+`;
+
+export const HamburgerWrapper = styled.div`
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  @media (max-width: 1240px) {
+    display: flex;
+  }
 `;
 
 export const NavLink = styled.p`
@@ -36,6 +55,19 @@ export const NavLinksWrapper = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 1240px) {
+    display: none;
+  }
+`;
+
+export const LogoWrapper = styled.div`
+  @media (max-width: 1240px) {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 `;
 
 export const CartWrapper = styled.div`
