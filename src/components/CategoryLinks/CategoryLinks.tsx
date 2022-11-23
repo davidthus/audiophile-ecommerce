@@ -12,7 +12,7 @@ import {
   LinkImg,
 } from "./CategoryLinks.style";
 
-function CategoryLinks() {
+function CategoryLinks({ navbar }: { navbar?: boolean }) {
   const links = [
     {
       heading: "headphones",
@@ -32,9 +32,9 @@ function CategoryLinks() {
   ];
 
   return (
-    <Container>
+    <Container sm={navbar && true}>
       {links.map((link, i) => (
-        <LinkContainer key={i}>
+        <LinkContainer sm={navbar && true} key={i}>
           <LinkImg src={link.imgSrc} alt={link.heading} />
           <LinkHeading>{link.heading}</LinkHeading>
           <Link

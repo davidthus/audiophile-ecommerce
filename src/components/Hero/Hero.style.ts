@@ -48,7 +48,7 @@ export const ArticleWrapper = styled.article`
   flex-direction: column;
   justify-content: center;
   gap: 38px;
-  z-index: 99;
+  z-index: 30;
 
   @media (max-width: 1240px) {
     max-width: 396px;
@@ -75,13 +75,12 @@ export const SecondTitle = styled.h2`
 `;
 
 export const Description = styled.p`
-  text-align: center;
   ${Subtitle}
   color: #FFFFFF;
   mix-blend-mode: normal;
+  opacity: 0.75;
   @media (max-width: 1240px) {
     max-width: 349px;
     text-align: center;
   }
-  opacity: 0.75;
 `;

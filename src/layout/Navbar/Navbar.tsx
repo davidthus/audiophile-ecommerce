@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { ReactComponent as CartIcon } from "../../assets/shared/desktop/icon-cart.svg";
 import { ReactComponent as Logo } from "../../assets/shared/desktop/logo.svg";
 import { ReactComponent as HamburgerIcon } from "../../assets/shared/tablet/icon-hamburger.svg";
-import { Cart } from "../../components";
+import { Cart, CategoryLinks } from "../../components";
 import { closeModal, openModal } from "../../features/ModalSlice";
+import { useMatchMedia } from "../../hooks/useMatchMedia";
 import { disableScrolling, enableScrolling } from "../../utils/scrolling";
 import {
   CartWrapper,
   Container,
   HamburgerWrapper,
   LogoWrapper,
+  MobileMenuWrapper,
   NavLink,
   NavLinksWrapper,
   PageOverlay,
@@ -40,8 +42,15 @@ const appPaths = [
 
 function Navbar() {
   const location = useLocation();
+  const { isTabletSize } = useMatchMedia();
   const dispatch = useAppDispatch();
   const { modal, cart } = useAppSelector((state) => state);
+
+  useEffect(() => {
+    if (modal.modalOpen && modal.modalType === "navbar" && !isTabletSize) {
+      dispatch(closeModal());
+    }
+  }, [isTabletSize, modal.modalOpen, modal.modalType, dispatch]);
 
   return (
     <Container>
@@ -56,6 +65,11 @@ function Navbar() {
           }}
         />
       )}
+      {modal.modalOpen && modal.modalType === "navbar" && isTabletSize && (
+        <MobileMenuWrapper>
+          <CategoryLinks navbar={true} />
+        </MobileMenuWrapper>
+      )}
       <Wrapper
         page={
           appPaths.some((path) => path.path === location.pathname)
@@ -63,7 +77,17 @@ function Navbar() {
             : false
         }
       >
-        <HamburgerWrapper>
+        <HamburgerWrapper
+          onClick={() => {
+            if (modal.modalType === "navbar" && modal.modalOpen) {
+              dispatch(closeModal());
+            } else if (modal.modalType !== "navbar") {
+              dispatch(openModal({ type: "navbar" }));
+            } else {
+              dispatch(closeModal());
+            }
+          }}
+        >
           <HamburgerIcon />
         </HamburgerWrapper>
         <LogoWrapper>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Overline } from "../../shared/typography";
 
 export const Container = styled.header`
+  position: relative;
   width: 100%;
   background-color: #1a1a1a;
   display: flex;
@@ -106,4 +107,22 @@ export const PageOverlay = styled.div`
   height: 100vh;
   left: 0;
   top: 85px;
+`;
+
+export const MobileMenuWrapper = styled.section`
+  background-color: #fff;
+  height: 340px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  justify-content: center;
+  padding-top: 56px;
+  padding-bottom: 67px;
+  padding-inline: 35px;
+  top: 86px;
+  left: 0;
+  right: 0;
+  z-index: 150;
 `;
