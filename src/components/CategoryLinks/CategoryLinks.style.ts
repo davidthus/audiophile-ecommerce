@@ -4,9 +4,13 @@ import { HeadingSix } from "../../shared/typography";
 export const Container = styled.nav`
   display: grid;
   width: 100%;
-  gap: clamp(10px, 5%, 30px);
+  gap: 30px;
   grid-template: 1fr / 1fr 1fr 1fr;
   height: ${({ sm }: { sm: boolean }) => (sm ? "216px" : "284px")};
+
+  @media (max-width: 1240px) {
+    gap: 10px;
+  }
 `;
 
 export const LinkContainer = styled.div`

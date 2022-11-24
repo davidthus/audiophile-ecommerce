@@ -18,6 +18,13 @@ export const HomeContentWrapper = styled.section`
   align-items: center;
   padding-top: 115px;
   padding-bottom: 200px;
+
+  @media (max-width: 1240px) {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    padding-inline: 39px;
+    gap: 96px;
+  }
 `;
 
 export const ContentWrapper = styled.section`

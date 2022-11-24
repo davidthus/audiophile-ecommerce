@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import earphonesSrc from "../../assets/home/desktop/image-earphones-yx1.jpg";
 import { Button2 } from "../../shared/buttons";
 
 import {
@@ -37,7 +36,7 @@ function HomeProducts() {
           <Button2>See Product</Button2>
         </Link>
       </MiddleSectionArticle>
-      <BottomLeft src={earphonesSrc} alt="yx1 earphones" />
+      <BottomLeft />
       <BottomRight>
         <SecondaryHeading>YX1 EARPHONES</SecondaryHeading>
         <Link to="/product/yx1-earphones">
