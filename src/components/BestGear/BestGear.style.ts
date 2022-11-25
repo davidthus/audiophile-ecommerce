@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bestGearDesktopSrc from "../../assets/shared/desktop/image-best-gear.jpg";
 import bestGearTabletSrc from "../../assets/shared/tablet/image-best-gear.jpg";
 import { HeadingTwo, Subtitle } from "../../shared/typography";
 
@@ -16,20 +15,20 @@ export const Container = styled.section`
   }
 `;
 
-export const Image = styled.div`
+export const DesktopImage = styled.img`
   width: auto;
   height: 100%;
   border-radius: 8px;
-  background-image: url(${bestGearDesktopSrc});
+`;
+
+export const TabletImage = styled.div`
+  border-radius: 8px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
-
-  @media (max-width: 1240px) {
-    background-image: url(${bestGearTabletSrc});
-    width: 100%;
-    height: 300px;
-  }
+  background-image: url(${bestGearTabletSrc});
+  width: 100%;
+  height: 300px;
 `;
 
 export const Heading = styled.h2`

@@ -1,14 +1,19 @@
 import React from "react";
+import bestGearDesktopSrc from "../../assets/shared/desktop/image-best-gear.jpg";
+import { useMatchMedia } from "../../hooks/useMatchMedia";
 import {
   ArticleWrapper,
   Container,
   Description,
+  DesktopImage,
   Emphasis,
   Heading,
-  Image,
+  TabletImage,
 } from "./BestGear.style";
 
 function AboutAudiophile() {
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
+
   return (
     <Container>
       <ArticleWrapper>
@@ -24,7 +29,10 @@ function AboutAudiophile() {
           best place to buy your portable audio equipment.
         </Description>
       </ArticleWrapper>
-      <Image />
+      {isDesktopSize && (
+        <DesktopImage src={bestGearDesktopSrc} alt="A man wearing headphones" />
+      )}
+      {(isMobileSize || isTabletSize) && <TabletImage />}
     </Container>
   );
 }

@@ -75,10 +75,14 @@ export const MiddleSectionArticle = styled.section`
   background-size: cover;
   background-position: center left;
 
-  @media (max-width: 1240px) {
+  @media (max-width: 830px) {
     background-image: url(${speaker7TabletSrc});
     background-position: left bottom -2rem;
     background-size: 761px;
+  }
+
+  @media (max-width: 620px) {
+    background-position: center;
   }
 `;
 
@@ -132,6 +136,9 @@ export const BottomLeft = styled.div`
   background-size: contain;
   background-position: center;
 
+  @media (max-width: 1240px) {
+    background-size: cover;
+  }
   @media (max-width: 1240px) {
     background-image: url(${earphonesTabletSrc});
   }
