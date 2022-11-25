@@ -1,5 +1,4 @@
 import React from "react";
-import bestGearSrc from "../../assets/shared/desktop/image-best-gear.jpg";
 import {
   ArticleWrapper,
   Container,
@@ -25,7 +24,7 @@ function AboutAudiophile() {
           best place to buy your portable audio equipment.
         </Description>
       </ArticleWrapper>
-      <Image src={bestGearSrc} alt="the best audio gear" />
+      <Image />
     </Container>
   );
 }

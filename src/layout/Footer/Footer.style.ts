@@ -7,7 +7,12 @@ export const Container = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: clamp(36px, 2vw, 60px);
+  padding-bottom: 60px;
+
+  @media (max-width: 1240px) {
+    padding-inline: 39px;
+    padding-bottom: 46px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -15,6 +20,12 @@ export const Wrapper = styled.div`
   max-width: 1110px;
   display: grid;
   grid-template: 80px 60px 90px 80px / 1fr;
+
+  @media (max-width: 1240px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const NavLink = styled.p`
@@ -37,11 +48,16 @@ export const NavLinksWrapper = styled.nav`
 export const About = styled.p`
   ${Subtitle}
   color: #FFFFFF;
-
   mix-blend-mode: normal;
   opacity: 0.5;
   width: 100%;
   max-width: 540px;
+
+  @media (max-width: 1240px) {
+    margin-top: 32px;
+    max-width: auto;
+    width: 100%;
+  }
 `;
 
 export const FooterBarWrapper = styled.div`
@@ -50,6 +66,10 @@ export const FooterBarWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media (max-width: 1240px) {
+    height: 60px;
+  }
 `;
 
 export const FooterBar = styled.div`
@@ -62,6 +82,12 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media (max-width: 1240px) {
+    flex-direction: column;
+    gap: 32px;
+    justify-content: flex-start;
+  }
 `;
 
 export const AboutWrapper = styled.article`
@@ -82,6 +108,10 @@ export const CopyrightWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  @media (max-width: 1240px) {
+    margin-top: 80px;
+    width: 100%;
+  }
 `;
 
 export const CopyrightText = styled.p`
