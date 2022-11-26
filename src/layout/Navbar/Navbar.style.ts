@@ -13,6 +13,9 @@ export const Container = styled.header`
   @media (max-width: 1240px) {
     padding-inline: 40px;
   }
+  @media (max-width: 690px) {
+    padding-inline: 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -28,6 +31,10 @@ export const Wrapper = styled.div`
   @media (max-width: 1240px) {
     gap: 42px;
     justify-content: flex-start;
+  }
+  @media (max-width: 690px) {
+    max-width: auto;
+    padding-inline: 24px;
   }
 `;
 
@@ -68,6 +75,9 @@ export const LogoWrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+  }
+  @media (max-width: 690px) {
+    justify-content: center;
   }
 `;
 
@@ -125,4 +135,10 @@ export const MobileMenuWrapper = styled.section`
   left: 0;
   right: 0;
   z-index: 150;
+  @media (max-width: 690px) {
+    padding-inline: 24px;
+    padding-top: 32px;
+    padding-bottom: 35px;
+    height: fit-content;
+  }
 `;

@@ -19,7 +19,7 @@ import {
 } from "./Footer.style";
 
 function Footer() {
-  const { isTabletSize, isDesktopSize } = useMatchMedia();
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
 
   const appPaths = [
     {
@@ -103,7 +103,7 @@ function Footer() {
         </AboutWrapper>
         <CopyrightWrapper>
           <CopyrightText>Copyright 2021. All Rights Reserved</CopyrightText>
-          {isTabletSize && (
+          {(isTabletSize || isMobileSize) && (
             <SocialsWrapper>
               <SocialsSvg
                 width="24"

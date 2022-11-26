@@ -13,6 +13,14 @@ export const Container = styled.nav`
   }
 `;
 
+export const MobileContainer = styled.nav`
+  gap: 16px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr;
+  height: 683px;
+  width: 100%;
+`;
+
 export const LinkContainer = styled.div`
   align-self: end;
   border-radius: 8px;
@@ -24,11 +32,42 @@ export const LinkContainer = styled.div`
   padding-bottom: ${({ sm }: { sm: boolean }) => (sm ? "22px" : "2rem")};
 `;
 
+export const MobileLinkContainer = styled.div`
+  height: 217px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+`;
+
+export const MobileWrapper = styled.div`
+  display: grid;
+  height: 165px;
+  padding-bottom: 22px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  grid-template: 121px 0px 27px / 1fr;
+  width: 100%;
+`;
+
 export const LinkHeading = styled.h6`
   ${HeadingSix}
   color: #000;
   text-align: center;
   align-self: start;
+`;
+
+export const MobileLinkHeading = styled.h6`
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 1.07143px;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+  align-self: end;
+  justify-self: center;
 `;
 
 export const LinkImg = styled.img`

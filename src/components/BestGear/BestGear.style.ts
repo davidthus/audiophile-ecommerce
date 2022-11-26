@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bestGearTabletSrc from "../../assets/shared/tablet/image-best-gear.jpg";
-import { HeadingTwo, Subtitle } from "../../shared/typography";
+import { HeadingFour, HeadingTwo, Subtitle } from "../../shared/typography";
 
 export const Container = styled.section`
   width: 100%;
@@ -12,6 +12,10 @@ export const Container = styled.section`
     flex-direction: column-reverse;
     gap: 63px;
     justify-content: flex-start;
+  }
+
+  @media (max-width: 690px) {
+    gap: 40px;
   }
 `;
 
@@ -29,6 +33,10 @@ export const TabletImage = styled.div`
   background-image: url(${bestGearTabletSrc});
   width: 100%;
   height: 300px;
+
+  @media (max-width: 690px) {
+    background-position: center;
+  }
 `;
 
 export const Heading = styled.h2`
@@ -38,12 +46,20 @@ export const Heading = styled.h2`
   @media (max-width: 1240px) {
     text-align: center;
   }
+
+  @media (max-width: 690px) {
+    ${HeadingFour}
+  }
 `;
 
 export const Emphasis = styled.em`
   ${HeadingTwo}
   color: #D87D4A;
   font-style: normal;
+
+  @media (max-width: 690px) {
+    ${HeadingFour}
+  }
 `;
 
 export const Description = styled.p`

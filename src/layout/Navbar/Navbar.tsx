@@ -42,15 +42,16 @@ const appPaths = [
 
 function Navbar() {
   const location = useLocation();
-  const { isTabletSize } = useMatchMedia();
+  const { isTabletSize, isMobileSize, isDesktopSize } = useMatchMedia();
   const dispatch = useAppDispatch();
   const { modal, cart } = useAppSelector((state) => state);
 
   useEffect(() => {
-    if (modal.modalOpen && modal.modalType === "navbar" && !isTabletSize) {
+    if (modal.modalOpen && modal.modalType === "navbar" && isDesktopSize) {
       dispatch(closeModal());
+      enableScrolling();
     }
-  }, [isTabletSize, modal.modalOpen, modal.modalType, dispatch]);
+  }, [isTabletSize, modal.modalOpen, modal.modalType, dispatch, isDesktopSize]);
 
   return (
     <Container>
@@ -65,11 +66,13 @@ function Navbar() {
           }}
         />
       )}
-      {modal.modalOpen && modal.modalType === "navbar" && isTabletSize && (
-        <MobileMenuWrapper>
-          <CategoryLinks navbar={true} />
-        </MobileMenuWrapper>
-      )}
+      {modal.modalOpen &&
+        modal.modalType === "navbar" &&
+        (isTabletSize || isMobileSize) && (
+          <MobileMenuWrapper>
+            <CategoryLinks navbar={true} />
+          </MobileMenuWrapper>
+        )}
       <Wrapper
         page={
           appPaths.some((path) => path.path === location.pathname)
@@ -81,10 +84,13 @@ function Navbar() {
           onClick={() => {
             if (modal.modalType === "navbar" && modal.modalOpen) {
               dispatch(closeModal());
+              enableScrolling();
             } else if (modal.modalType !== "navbar") {
               dispatch(openModal({ type: "navbar" }));
+              disableScrolling();
             } else {
               dispatch(closeModal());
+              enableScrolling();
             }
           }}
         >

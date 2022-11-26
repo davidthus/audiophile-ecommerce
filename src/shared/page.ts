@@ -25,6 +25,13 @@ export const HomeContentWrapper = styled.section`
     padding-inline: 39px;
     gap: 96px;
   }
+
+  @media (max-width: 690px) {
+    padding-top: 40px;
+    padding-bottom: 120px;
+    padding-inline: 24px;
+    gap: 120px;
+  }
 `;
 
 export const ContentWrapper = styled.section`

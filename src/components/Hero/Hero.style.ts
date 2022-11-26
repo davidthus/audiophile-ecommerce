@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import heroDesktopImgSrc from "../../assets/home/desktop/image-hero.jpg";
-import heroMobileImgSrc from "../../assets/home/mobile/image-header.jpg";
 import heroTabletImgSrc from "../../assets/home/tablet/image-header.jpg";
 import { Body, HeadingOne, Subtitle } from "../../shared/typography";
 
@@ -25,6 +24,14 @@ export const Container = styled.section`
   @media (max-width: 1240px) {
     &::after {
       background: url(${heroTabletImgSrc}) center top 3rem / contain no-repeat;
+    }
+  }
+
+  @media (max-width: 680px) {
+    &::after {
+      background-size: 586px;
+      mix-blend-mode: normal;
+      background-position: center top 6rem;
     }
   }
 `;
@@ -54,6 +61,10 @@ export const ArticleWrapper = styled.article`
     max-width: 396px;
     align-items: center;
   }
+  @media (max-width: 690px) {
+    max-width: 328px;
+    gap: 0;
+  }
 `;
 
 export const MainTitle = styled.h1`
@@ -61,6 +72,16 @@ export const MainTitle = styled.h1`
   color: #FFFFFF;
   @media (max-width: 1240px) {
     text-align: center;
+  }
+  @media (max-width: 690px) {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
+    margin-top: 16px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -82,5 +103,8 @@ export const Description = styled.p`
   @media (max-width: 1240px) {
     max-width: 349px;
     text-align: center;
+  }
+  @media (max-width: 690px) {
+    margin-bottom: 28px;
   }
 `;

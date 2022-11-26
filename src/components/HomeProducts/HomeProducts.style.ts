@@ -28,6 +28,11 @@ export const Container = styled.section`
     row-gap: 32px;
     margin-top: 0;
   }
+
+  @media (max-width: 690px) {
+    grid-template: 600px 320px 200px 200px / 1fr;
+    row-gap: 24px;
+  }
 `;
 
 export const TopSection = styled.div`
@@ -50,6 +55,12 @@ export const TopSection = styled.div`
     flex-direction: column;
     padding-bottom: 64px;
     padding-right: 0;
+  }
+
+  @media (max-width: 690px) {
+    padding-bottom: 55px;
+    background-size: 172.25px 207px, 558px 558px;
+    background-position: top 55px center, top -8rem center;
   }
 `;
 
@@ -81,6 +92,10 @@ export const MiddleSectionArticle = styled.section`
     background-size: 761px;
   }
 
+  @media (max-width: 690px) {
+    padding-left: 24px;
+  }
+
   @media (max-width: 620px) {
     background-position: center;
   }
@@ -90,14 +105,32 @@ export const SecondaryHeading = styled.h3`
   ${HeadingFour}
   color: #000;
   margin-bottom: 32px;
+
+  @media (max-width: 690px) {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
 `;
 
 export const Heading = styled.h2`
   ${HeadingOne}
   color: #FFF;
   margin-bottom: 24px;
+
   @media (max-width: 1240px) {
     text-align: center;
+  }
+
+  @media (max-width: 690px) {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1.28571px;
+    text-transform: uppercase;
   }
 `;
 
@@ -109,6 +142,10 @@ export const Description = styled.p`
   margin-bottom: 40px;
   @media (max-width: 1240px) {
     text-align: center;
+  }
+
+  @media (max-width: 690px) {
+    margin-bottom: 24px;
   }
 `;
 
@@ -138,9 +175,11 @@ export const BottomLeft = styled.div`
 
   @media (max-width: 1240px) {
     background-size: cover;
-  }
-  @media (max-width: 1240px) {
     background-image: url(${earphonesTabletSrc});
+  }
+
+  @media (max-width: 690px) {
+    grid-area: -3 / 1 / -2 / -1;
   }
 `;
 
@@ -154,5 +193,9 @@ export const BottomRight = styled.article`
 
   @media (max-width: 1240px) {
     padding-left: 12%;
+  }
+
+  @media (max-width: 690px) {
+    padding-left: 24px;
   }
 `;

@@ -13,6 +13,10 @@ export const Container = styled.footer`
     padding-inline: 39px;
     padding-bottom: 46px;
   }
+  @media (max-width: 690px) {
+    padding-inline: 24px;
+    padding-bottom: 38px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -25,6 +29,9 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+  @media (max-width: 690px) {
+    align-items: center;
   }
 `;
 
@@ -43,6 +50,14 @@ export const NavLinksWrapper = styled.nav`
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
+
+  @media (max-width: 690px) {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 export const About = styled.p`
@@ -58,6 +73,10 @@ export const About = styled.p`
     max-width: auto;
     width: 100%;
   }
+  @media (max-width: 690px) {
+    margin-top: 48px;
+    text-align: center;
+  }
 `;
 
 export const FooterBarWrapper = styled.div`
@@ -69,6 +88,10 @@ export const FooterBarWrapper = styled.div`
 
   @media (max-width: 1240px) {
     height: 60px;
+  }
+  @media (max-width: 690px) {
+    height: 50px;
+    justify-content: center;
   }
 `;
 
@@ -87,6 +110,9 @@ export const Navbar = styled.nav`
     flex-direction: column;
     gap: 32px;
     justify-content: flex-start;
+  }
+  @media (max-width: 690px) {
+    gap: 48px;
   }
 `;
 
@@ -112,6 +138,13 @@ export const CopyrightWrapper = styled.div`
     margin-top: 80px;
     width: 100%;
   }
+  @media (max-width: 690px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 48px;
+    margin-top: 48px;
+  }
 `;
 
 export const CopyrightText = styled.p`
@@ -120,6 +153,9 @@ export const CopyrightText = styled.p`
   opacity: 0.5;
   mix-blend-mode: normal;
   font-weight: 700;
+  @media (max-width: 690px) {
+    text-align: center;
+  }
 `;
 
 export const SocialsSvg = styled.svg`
