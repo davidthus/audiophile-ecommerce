@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Body, HeadingTwo, Subtitle } from "./typography";
+import { Body, HeadingFour, HeadingTwo, Subtitle } from "./typography";
 
 export const ArticleContainer = styled.section`
   width: 100%;
@@ -44,6 +44,10 @@ export const ArticleHeading = styled.h3`
     text-align: center;
     width: 100%;
   }
+  @media (max-width: 690px) {
+    ${HeadingFour}
+    margin-bottom: 24px;
+  }
 `;
 
 export const Description = styled.p`
@@ -69,11 +73,28 @@ export const ArticleImage = styled.img`
   }
 `;
 
+export const MobileImage = styled.div`
+  background-image: url(${({ tablet }: {tablet: string}) => require("../assets/" + tablet)});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 352px;
+  border-radius: 8px; 
+  
+  @media (max-width: 490px){
+    background-image: url(${({ mobile }: {mobile: string}) => require("../assets/" + mobile)});
+  }
+`;
+
 export const Subheading = styled.h4`
   color: #d87d4a;
   ${Body}
   margin-bottom: 16px;
   @media (max-width: 1240px) {
     text-align: center;
+  }
+  @media (max-width: 690px) {
+    margin-bottom: 24px;
   }
 `;

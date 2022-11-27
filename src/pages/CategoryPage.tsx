@@ -9,6 +9,7 @@ import {
   ArticleHeading,
   ArticleImage,
   Description,
+  MobileImage,
   Subheading,
 } from "../shared/article";
 import { Button1 } from "../shared/buttons";
@@ -17,7 +18,7 @@ import { ContentWrapper, PageContainer } from "../shared/page";
 
 function CategoryPage() {
   const { productCategory } = useParams();
-  const { isTabletSize, isDesktopSize } = useMatchMedia();
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
   const products = Data.filter(
     (product) => product.category === productCategory
   );
@@ -39,7 +40,7 @@ function CategoryPage() {
                   <Button1>See Product</Button1>
                 </Link>
               )}
-              {isTabletSize && (
+              {(isTabletSize || isMobileSize) && (
                 <Link
                   to={`/product/${product.slug}`}
                   style={{
@@ -64,6 +65,12 @@ function CategoryPage() {
                 src={require(`../assets/${product.categoryImage.tablet}`)}
                 alt="ZX9
             SPEAKER"
+              />
+            )}
+            {isMobileSize && (
+              <MobileImage
+                mobile={product.categoryImage.mobile}
+                tablet={product.categoryImage.tablet}
               />
             )}
           </ArticleContainer>

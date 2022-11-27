@@ -49,6 +49,10 @@ export const ContentWrapper = styled.section`
     padding-bottom: 120px;
     gap: 120px;
   }
+  @media (max-width: 690px){
+    padding-top: 64px;
+    padding-inline: 24px;
+  }
 `;
 
 export const ProductContentWrapper = styled.section`
