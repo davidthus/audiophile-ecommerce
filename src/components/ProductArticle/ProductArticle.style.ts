@@ -6,6 +6,9 @@ export const Container = styled.section`
   flex-direction: column;
   width: 100%;
   gap: 56px;
+  @media (max-width: 1240px) {
+    gap: 24px;
+  }
 `;
 
 export const BackLink = styled.p`
@@ -20,6 +23,9 @@ export const Price = styled.h6`
   ${HeadingSix}
   color: #000;
   margin-bottom: 47px;
+  @media (max-width: 1240px) {
+    margin-bottom: 31px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

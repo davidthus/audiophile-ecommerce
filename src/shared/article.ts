@@ -25,6 +25,20 @@ export const ArticleContainer = styled.section`
   }
 `;
 
+export const ProductArticleContainer = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  @media (max-width: 1240px){
+    gap: 69px;
+  }
+`;
+
 export const Article = styled.article`
   max-width: 445px;
   width: 100%;
@@ -33,6 +47,16 @@ export const Article = styled.article`
   justify-content: center;
   @media (max-width: 1240px) {
     max-width: unset;
+  }
+`;
+export const ProductArticleWrapper = styled.article`
+  max-width: 445px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: 1240px){
+   max-width: 339px; 
   }
 `;
 
@@ -50,13 +74,22 @@ export const ArticleHeading = styled.h3`
   }
 `;
 
+export const ProductArticleHeading = styled.h3`
+  ${HeadingTwo}
+  margin-bottom: 32px;
+  color: #000;
+  @media (max-width: 1240px){
+    ${HeadingFour}
+    margin-bottom: 24px;
+  }
+`;
+
 export const Description = styled.p`
   ${Subtitle}
   color: #000000;
   mix-blend-mode: normal;
   opacity: 0.5;
-  margin-bottom: ${({ product }: { product: boolean }) =>
-    product ? "32px" : "40px"};
+  margin-bottom: 40px;
 
   @media (max-width: 1240px) {
     text-align: center;
@@ -64,14 +97,43 @@ export const Description = styled.p`
   }
 `;
 
+export const ProductDescription = styled.p`
+  ${Subtitle}
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-bottom: 32px;
+  @media (max-width: 690px){
+    margin-bottom: 24px;
+    
+  }
+`;
+
 export const ArticleImage = styled.img`
   width: 45%;
   height: auto;
   border-radius: 8px;
-  @media (max-width: 1240px) {
-    width: 100%;
-  }
 `;
+
+export const ProductArticleImage = styled.img`
+  width: 45%;
+  height: auto;
+  border-radius: 8px;
+`;
+
+export const ProductMobileImage = styled.div`
+  background-image: url(${({ tablet }: {tablet: string}) => require("../assets/" + tablet)});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 40%;
+  height: 480px;
+  border-radius: 8px; 
+  
+  @media (max-width: 490px){
+    background-image: url(${({ mobile }: {mobile: string}) => require("../assets/" + mobile)});
+  }
+`
 
 export const MobileImage = styled.div`
   background-image: url(${({ tablet }: {tablet: string}) => require("../assets/" + tablet)});
@@ -97,4 +159,10 @@ export const Subheading = styled.h4`
   @media (max-width: 690px) {
     margin-bottom: 24px;
   }
+`;
+
+export const ProductSubheading = styled.h4`
+  color: #d87d4a;
+  ${Body}
+  margin-bottom: 16px;
 `;

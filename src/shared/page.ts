@@ -49,7 +49,7 @@ export const ContentWrapper = styled.section`
     padding-bottom: 120px;
     gap: 120px;
   }
-  @media (max-width: 690px){
+  @media (max-width: 690px) {
     padding-top: 64px;
     padding-inline: 24px;
   }
@@ -64,6 +64,15 @@ export const ProductContentWrapper = styled.section`
   gap: 160px;
   padding-top: 79px;
   padding-bottom: 160px;
+  @media (max-width: 1240px) {
+    padding-inline: 39px;
+    padding-top: 33px;
+    padding-bottom: 120px;
+  }
+  @media (max-width: 690px) {
+    padding-inline: 24px;
+    padding-top: 16px;
+  }
 `;
 
 export const CheckoutWrapper = styled.section`

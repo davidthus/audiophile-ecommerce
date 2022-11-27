@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../app/hooks";
 import { addItemToCart } from "../../features/CartSlice";
+import { useMatchMedia } from "../../hooks/useMatchMedia";
 import {
-  Article,
-  ArticleContainer,
-  ArticleHeading,
-  ArticleImage,
-  Description,
-  Subheading,
+  ProductArticleContainer,
+  ProductArticleHeading,
+  ProductArticleImage,
+  ProductArticleWrapper,
+  ProductDescription,
+  ProductMobileImage,
+  ProductSubheading,
 } from "../../shared/article";
 import { Button1 } from "../../shared/buttons";
 import { Product } from "../../types/Product";
@@ -26,6 +28,7 @@ interface ProductArticleProps {
 }
 
 function ProductArticle({ product }: ProductArticleProps) {
+  const { isMobileSize, isTabletSize, isDesktopSize } = useMatchMedia();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -38,14 +41,22 @@ function ProductArticle({ product }: ProductArticleProps) {
   return (
     <Container>
       <BackLink onClick={() => navigate(-1)}>Go Back</BackLink>
-      <ArticleContainer>
-        <ArticleImage
-          src={require(`../../assets/${product?.image?.desktop}`)}
-        />
-        <Article>
-          {product.new && <Subheading>NEW PRODUCT</Subheading>}
-          <ArticleHeading>{product.name}</ArticleHeading>
-          <Description product>{product.description}</Description>
+      <ProductArticleContainer>
+        {isDesktopSize && (
+          <ProductArticleImage
+            src={require(`../../assets/${product?.image?.desktop}`)}
+          />
+        )}
+        {(isMobileSize || isTabletSize) && (
+          <ProductMobileImage
+            tablet={product?.image?.tablet}
+            mobile={product?.image?.mobile}
+          />
+        )}
+        <ProductArticleWrapper>
+          {product.new && <ProductSubheading>NEW PRODUCT</ProductSubheading>}
+          <ProductArticleHeading>{product.name}</ProductArticleHeading>
+          <ProductDescription>{product.description}</ProductDescription>
           <Price>$ {product.price.toLocaleString()}</Price>
           <ButtonsWrapper>
             <ChangeQuantityWrapper>
@@ -68,8 +79,8 @@ function ProductArticle({ product }: ProductArticleProps) {
               Add To Cart
             </Button1>
           </ButtonsWrapper>
-        </Article>
-      </ArticleContainer>
+        </ProductArticleWrapper>
+      </ProductArticleContainer>
     </Container>
   );
 }
