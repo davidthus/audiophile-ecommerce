@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { BestGear, CategoryLinks } from "../components";
 import Data from "../data/data.json";
+import { useMatchMedia } from "../hooks/useMatchMedia";
 import {
   Article,
   ArticleContainer,
@@ -16,6 +17,7 @@ import { ContentWrapper, PageContainer } from "../shared/page";
 
 function CategoryPage() {
   const { productCategory } = useParams();
+  const { isTabletSize, isDesktopSize } = useMatchMedia();
   const products = Data.filter(
     (product) => product.category === productCategory
   );
@@ -32,15 +34,38 @@ function CategoryPage() {
               {product.new && <Subheading>New Product</Subheading>}
               <ArticleHeading>{product.name}</ArticleHeading>
               <Description>{product.description}</Description>
-              <Link to={`/product/${product.slug}`}>
-                <Button1>See Product</Button1>
-              </Link>
+              {isDesktopSize && (
+                <Link to={`/product/${product.slug}`}>
+                  <Button1>See Product</Button1>
+                </Link>
+              )}
+              {isTabletSize && (
+                <Link
+                  to={`/product/${product.slug}`}
+                  style={{
+                    justifyContent: "center",
+                    display: "flex",
+                    textDecoration: "none",
+                  }}
+                >
+                  <Button1>See Product</Button1>
+                </Link>
+              )}
             </Article>
-            <ArticleImage
-              src={require(`../assets/${product.categoryImage.desktop}`)}
-              alt="ZX9
+            {isDesktopSize && (
+              <ArticleImage
+                src={require(`../assets/${product.categoryImage.desktop}`)}
+                alt="ZX9
             SPEAKER"
-            />
+              />
+            )}
+            {isTabletSize && (
+              <ArticleImage
+                src={require(`../assets/${product.categoryImage.tablet}`)}
+                alt="ZX9
+            SPEAKER"
+              />
+            )}
           </ArticleContainer>
         ))}
         <CategoryLinks />

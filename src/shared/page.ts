@@ -43,6 +43,12 @@ export const ContentWrapper = styled.section`
   gap: 160px;
   padding-top: 160px;
   padding-bottom: 160px;
+  @media (max-width: 1240px) {
+    padding-inline: 40px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    gap: 120px;
+  }
 `;
 
 export const ProductContentWrapper = styled.section`
