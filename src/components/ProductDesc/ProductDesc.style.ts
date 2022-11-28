@@ -68,6 +68,9 @@ export const StackWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  @media (max-width: 690px) {
+    margin-bottom: 88px;
+  }
 `;
 
 export const StackRow = styled.li`

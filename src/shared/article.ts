@@ -38,7 +38,7 @@ export const ProductArticleContainer = styled.section`
     gap: 69px;
   }
   @media (max-width: 690px){
-    gap: 40px;
+    gap: 32px;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;

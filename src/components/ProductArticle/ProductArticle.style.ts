@@ -9,6 +9,9 @@ export const Container = styled.section`
   @media (max-width: 1240px) {
     gap: 24px;
   }
+  @media (max-width: 690px) {
+    margin-bottom: 88px;
+  }
 `;
 
 export const BackLink = styled.p`

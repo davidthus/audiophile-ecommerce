@@ -9,9 +9,21 @@ interface ProductGalleryProps {
 function ProductGallery({ gallery }: ProductGalleryProps) {
   return (
     <Container>
-      <TopLeft background={gallery.first.desktop} />
-      <BottomLeft background={gallery.second.desktop} />
-      <Right background={gallery.third.desktop} />
+      <TopLeft
+        desktop={gallery.first.desktop}
+        tablet={gallery.first.tablet}
+        mobile={gallery.first.mobile}
+      />
+      <BottomLeft
+        desktop={gallery.second.desktop}
+        tablet={gallery.second.tablet}
+        mobile={gallery.second.mobile}
+      />
+      <Right
+        desktop={gallery.third.desktop}
+        tablet={gallery.third.tablet}
+        mobile={gallery.third.mobile}
+      />
     </Container>
   );
 }

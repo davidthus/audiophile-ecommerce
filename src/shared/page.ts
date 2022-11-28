@@ -73,6 +73,7 @@ export const ProductContentWrapper = styled.section`
   @media (max-width: 690px) {
     padding-inline: 24px;
     padding-top: 16px;
+    gap: 0;
   }
 `;
 
