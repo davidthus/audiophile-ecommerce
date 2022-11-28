@@ -8,7 +8,7 @@ import {
   ProductCard,
   ProductImage,
   ProductName,
-  ProductsWrapper,
+  ProductsWrapper
 } from "./Recommendation.style";
 
 interface RecommendationsProps {
@@ -24,7 +24,9 @@ function Recommendations({ others }: RecommendationsProps) {
           others.map((product, i) => (
             <ProductCard key={i}>
               <ProductImage
-                src={require(`../../assets/${product.image.desktop}`)}
+                desktop={product.image.desktop}
+                tablet={product.image.tablet}
+                mobile={product.image.mobile}
               />
               <ProductName>{product.name}</ProductName>
               <Link to={`/product/${product.slug}`}>
