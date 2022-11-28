@@ -9,7 +9,11 @@ import {
   Reccomendations,
 } from "../components";
 import Data from "../data/data.json";
-import { PageContainer, ProductContentWrapper } from "../shared/page";
+import {
+  PageContainer,
+  ProductContentWrapper,
+  Seperator,
+} from "../shared/page";
 
 function ProductPage() {
   const { slug } = useParams();
@@ -30,6 +34,7 @@ function ProductPage() {
           </>
         )}
         <CategoryLinks />
+        <Seperator />
         <BestGear />
       </ProductContentWrapper>
     </PageContainer>

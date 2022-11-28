@@ -77,6 +77,11 @@ export const ProductContentWrapper = styled.section`
   }
 `;
 
+export const Seperator = styled.div`
+  width: 100%;
+  margin-bottom: 120px;
+`;
+
 export const CheckoutWrapper = styled.section`
   display: flex;
   max-width: 1110px;
