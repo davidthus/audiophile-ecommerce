@@ -37,6 +37,12 @@ export const ProductArticleContainer = styled.section`
   @media (max-width: 1240px){
     gap: 69px;
   }
+  @media (max-width: 690px){
+    gap: 40px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 `;
 
 export const Article = styled.article`
@@ -105,7 +111,6 @@ export const ProductDescription = styled.p`
   margin-bottom: 32px;
   @media (max-width: 690px){
     margin-bottom: 24px;
-    
   }
 `;
 
@@ -130,8 +135,10 @@ export const ProductMobileImage = styled.div`
   height: 480px;
   border-radius: 8px; 
   
-  @media (max-width: 490px){
+  @media (max-width: 690px){
     background-image: url(${({ mobile }: {mobile: string}) => require("../assets/" + mobile)});
+    width: 100%;
+    height: 327px;
   }
 `
 
