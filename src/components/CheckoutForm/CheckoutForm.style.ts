@@ -1,10 +1,19 @@
 import styled from "styled-components";
-import { HeadingThree, Overline, Subtitle } from "../../shared/typography";
+import {
+  HeadingFour,
+  HeadingThree,
+  Overline,
+  Subtitle,
+} from "../../shared/typography";
 
 export const Container = styled.form`
   width: 100%;
   display: flex;
   gap: 30px;
+  @media (max-width: 1240px) {
+    gap: 32px;
+    flex-direction: column;
+  }
 `;
 
 export const FormWrapper = styled.section`
@@ -14,6 +23,9 @@ export const FormWrapper = styled.section`
   padding: 54px 48px 48px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1240px) {
+    padding: 30px 27px;
+  }
 `;
 
 export const Heading = styled.h3`
@@ -21,6 +33,10 @@ export const Heading = styled.h3`
   color: #000;
   text-align: left;
   margin-bottom: 41px;
+  @media (max-width: 690px) {
+    margin-bottom: 32px;
+    ${HeadingFour}
+  }
 `;
 
 const Section = styled.section`
@@ -31,10 +47,16 @@ const Section = styled.section`
 
 export const BillingDetailsWrapper = styled(Section)`
   margin-bottom: 53px;
+  @media (max-width: 690px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const ShippingInfoWrapper = styled(Section)`
   margin-bottom: 61px;
+  @media (max-width: 690px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const PaymentDetailsWrapper = styled(Section)`
@@ -45,6 +67,10 @@ export const PaymentDetailsWrapper = styled(Section)`
 export const PaymentSelectWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 690px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 `;
 
 export const PaymentOptionsWrapper = styled.ul`
@@ -52,6 +78,9 @@ export const PaymentOptionsWrapper = styled.ul`
   flex-direction: column;
   gap: 16px;
   width: 48%;
+  @media (max-width: 690px) {
+    width: 100%;
+  }
 `;
 
 export const PaymentOption = styled.li`
@@ -72,6 +101,9 @@ export const PaymentOption = styled.li`
 
   &:hover {
     border: 1px solid #d87d4a;
+  }
+  @media (max-width: 690px) {
+    width: 100%;
   }
 `;
 
@@ -115,6 +147,10 @@ export const FieldsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 690px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 
 export const FieldWrapper = styled.div`
@@ -124,6 +160,10 @@ export const FieldWrapper = styled.div`
   width: ${({ fullLength }: { fullLength?: boolean }) =>
     fullLength ? "100%" : "48%"};
   margin-bottom: ${({ margin }: { margin?: boolean }) => (margin ? "24px" : 0)};
+  @media (max-width: 690px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
 `;
 
 export const LabelWrapper = styled.div`
@@ -184,6 +224,11 @@ export const EMoneyOptionsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 24px;
+  @media (max-width: 690px) {
+    margin-top: 16px;
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 
 export const OptionDescriptionWrapper = styled.div`
@@ -191,6 +236,11 @@ export const OptionDescriptionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  @media (max-width: 690px) {
+    margin-top: 14px;
+    flex-direction: column;
+    gap: 16px;
+  }
 `;
 
 export const OptionDescription = styled.p`
@@ -200,4 +250,7 @@ export const OptionDescription = styled.p`
   opacity: 0.5;
   width: 100%;
   max-width: 87%;
+  @media (max-width: 690px) {
+    max-width: unset;
+  }
 `;

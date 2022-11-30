@@ -13,6 +13,11 @@ export const Container = styled.section`
   border-radius: 8px;
   width: 377px;
   z-index: 99;
+
+  @media (max-width: 690px) {
+    top: 82px;
+    width: calc(100vw - 48px);
+  }
 `;
 
 export const TopWrapper = styled.div`

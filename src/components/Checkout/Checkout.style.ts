@@ -1,5 +1,10 @@
 import styled from "styled-components";
-import { HeadingSix, HeadingThree, Subtitle } from "../../shared/typography";
+import {
+  HeadingFive,
+  HeadingSix,
+  HeadingThree,
+  Subtitle,
+} from "../../shared/typography";
 
 export const Container = styled.section`
   max-width: 540px;
@@ -9,8 +14,12 @@ export const Container = styled.section`
   padding: 48px;
   display: grid;
   z-index: 99;
-  max-height: calc(100vh - (148px + 1.5rem));
+  max-height: calc(100vh - (229px + 1.5rem));
   overflow-y: auto;
+
+  @media (max-width: 690px) {
+    width: 87vw;
+  }
 `;
 
 export const PageOverlay = styled.div`
@@ -26,10 +35,16 @@ export const PageOverlay = styled.div`
   justify-content: center;
   align-items: flex-start;
   padding-top: 59px;
+  @media (max-width: 690px) {
+    padding-top: 134px;
+  }
 `;
 
 export const IconWrapper = styled.div`
   margin-bottom: 33px;
+  @media (max-width: 690px) {
+    margin-bottom: 23px;
+  }
 `;
 
 export const Heading = styled.h3`
@@ -38,6 +53,11 @@ export const Heading = styled.h3`
   max-width: 284px;
   width: 100%;
   margin-bottom: 24px;
+  @media (max-width: 690px) {
+    margin-bottom: 16px;
+    max-width: unset;
+    ${HeadingFive}
+  }
 `;
 
 export const SmallMessage = styled.p`
@@ -46,6 +66,9 @@ export const SmallMessage = styled.p`
   mix-blend-mode: normal;
   opacity: 0.5;
   margin-bottom: 33px;
+  @media (max-width: 690px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const MiddleSection = styled.section`
@@ -55,6 +78,10 @@ export const MiddleSection = styled.section`
   display: grid;
   grid-template: 1fr / 1fr 45%;
   min-height: 140px;
+  @media (max-width: 690px) {
+    margin-bottom: 23px;
+    grid-template: 1fr 92px / 1fr;
+  }
 `;
 
 export const RightSide = styled.article`
@@ -68,6 +95,12 @@ export const RightSide = styled.article`
   padding-left: 16%;
   padding-bottom: 41px;
   height: 100%;
+  @media (max-width: 690px) {
+    border-radius: 0px 0px 8px 8px;
+    padding-top: 15px;
+    padding-bottom: 19px;
+    padding-left: 24px;
+  }
 `;
 
 export const GrandTotalText = styled.p`
@@ -94,6 +127,10 @@ export const LeftSide = styled.section`
   flex-direction: column;
   border-radius: 8px 0px 0px 8px;
   height: fit-content;
+  min-height: 140px;
+  @media (max-width: 690px) {
+    border-radius: 8px 8px 0px 0px;
+  }
 `;
 
 export const ShowMoreToggle = styled.p`

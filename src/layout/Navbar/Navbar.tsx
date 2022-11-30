@@ -85,7 +85,10 @@ function Navbar() {
             if (modal.modalType === "navbar" && modal.modalOpen) {
               dispatch(closeModal());
               enableScrolling();
-            } else if (modal.modalType !== "navbar") {
+            } else if (
+              modal.modalType !== "navbar" &&
+              modal.modalType !== "checkout"
+            ) {
               dispatch(openModal({ type: "navbar" }));
               disableScrolling();
             } else {

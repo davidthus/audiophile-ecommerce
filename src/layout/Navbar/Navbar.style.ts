@@ -111,7 +111,7 @@ export const PageOverlay = styled.div`
   background: #000000;
   mix-blend-mode: normal;
   opacity: 0.4;
-  position: fixed;
+  position: absolute;
   z-index: 50;
   right: 0;
   height: 100vh;

@@ -91,6 +91,17 @@ export const CheckoutWrapper = styled.section`
   gap: 38px;
   padding-top: 79px;
   padding-bottom: 141px;
+  @media (max-width: 1240px) {
+    padding-top: 48px;
+    padding-bottom: 116px;
+    padding-inline: 39px;
+    gap: 24px;
+  }
+  @media (max-width: 690px) {
+    padding-top: 16px;
+    padding-bottom: 97px;
+    padding-inline: 24px;
+  }
 `;
 
 export const BackLink = styled.p`

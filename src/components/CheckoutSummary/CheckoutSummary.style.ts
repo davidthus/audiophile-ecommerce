@@ -11,6 +11,10 @@ export const Container = styled.section`
   max-width: 350px;
   width: 100%;
   height: min-content;
+  @media (max-width: 1240px) {
+    max-width: unset;
+    gap: 31px;
+  }
 `;
 
 export const ItemListWrapper = styled.ul`
